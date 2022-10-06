@@ -1,0 +1,106 @@
+2022-09-14 01:10:46.225 INFO  35892 --- [main] org.gavincui.imutest.ImuTestApplication - Starting ImuTestApplication using Java 17.0.4.1 on DESKTOP-IMRHIPC with PID 35892 (C:\work1\IMUTest\springboot\imu-test\target\classes started by gavin in C:\work1\IMUTest\springboot\imu-test)
+2022-09-14 01:10:46.230 INFO  35892 --- [main] org.gavincui.imutest.ImuTestApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-14 01:10:46.685 INFO  35892 --- [main] o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-14 01:10:46.695 INFO  35892 --- [main] o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2022-09-14 01:10:47.134 INFO  35892 --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-09-14 01:10:47.143 INFO  35892 --- [main] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-09-14 01:10:47.144 INFO  35892 --- [main] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-09-14 01:10:47.144 INFO  35892 --- [main] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-14 01:10:47.236 INFO  35892 --- [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-09-14 01:10:47.237 INFO  35892 --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 967 ms
+2022-09-14 01:10:47.349 INFO  35892 --- [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-09-14 01:10:47.530 INFO  35892 --- [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-09-14 01:10:47.577 INFO  35892 --- [main] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-14 01:10:47.625 INFO  35892 --- [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-14 01:10:47.767 INFO  35892 --- [main] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-14 01:10:47.877 INFO  35892 --- [main] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-14 01:10:48.040 INFO  35892 --- [main] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-14 01:10:48.048 INFO  35892 --- [main] o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-14 01:10:48.078 WARN  35892 --- [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-14 01:10:48.302 INFO  35892 --- [main] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-09-14 01:10:48.325 INFO  35892 --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-14 01:10:48.333 INFO  35892 --- [main] org.gavincui.imutest.ImuTestApplication - Started ImuTestApplication in 2.476 seconds (JVM running for 2.736)
+2022-09-14 01:11:29.020 INFO  35892 --- [SpringApplicationShutdownHook] o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-14 01:11:29.021 INFO  35892 --- [SpringApplicationShutdownHook] o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-14 01:11:29.023 INFO  35892 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-09-14 01:11:29.024 INFO  35892 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-09-14 23:33:22.644 INFO  5692 --- [main] org.gavincui.imutest.ImuTestApplication - Starting ImuTestApplication using Java 17.0.4.1 on DESKTOP-IMRHIPC with PID 5692 (C:\work1\IMUTest\springboot\imu-test\target\classes started by gavin in C:\work1\IMUTest\springboot\imu-test)
+2022-09-14 23:33:22.647 INFO  5692 --- [main] org.gavincui.imutest.ImuTestApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-14 23:33:23.095 INFO  5692 --- [main] o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-14 23:33:23.108 INFO  5692 --- [main] o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2022-09-14 23:33:23.541 INFO  5692 --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-09-14 23:33:23.550 INFO  5692 --- [main] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-09-14 23:33:23.550 INFO  5692 --- [main] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-09-14 23:33:23.551 INFO  5692 --- [main] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-14 23:33:23.638 INFO  5692 --- [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-09-14 23:33:23.639 INFO  5692 --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 945 ms
+2022-09-14 23:33:23.758 INFO  5692 --- [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-09-14 23:33:23.941 INFO  5692 --- [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-09-14 23:33:23.991 INFO  5692 --- [main] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-14 23:33:24.044 INFO  5692 --- [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-14 23:33:24.188 INFO  5692 --- [main] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-14 23:33:24.299 INFO  5692 --- [main] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-14 23:33:24.463 INFO  5692 --- [main] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-14 23:33:24.471 INFO  5692 --- [main] o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-14 23:33:24.498 WARN  5692 --- [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-14 23:33:24.716 INFO  5692 --- [main] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-09-14 23:33:24.740 INFO  5692 --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-14 23:33:24.748 INFO  5692 --- [main] org.gavincui.imutest.ImuTestApplication - Started ImuTestApplication in 2.476 seconds (JVM running for 2.746)
+2022-09-14 23:34:12.474 INFO  5692 --- [http-nio-8080-exec-1] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-14 23:34:12.474 INFO  5692 --- [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-09-14 23:34:12.475 INFO  5692 --- [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2022-09-14 23:37:43.625 INFO  5692 --- [SpringApplicationShutdownHook] o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-14 23:37:43.626 INFO  5692 --- [SpringApplicationShutdownHook] o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-14 23:37:43.627 INFO  5692 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-09-14 23:37:43.629 INFO  5692 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-09-14 23:38:03.497 INFO  9436 --- [main] org.gavincui.imutest.ImuTestApplication - Starting ImuTestApplication using Java 17.0.4.1 on DESKTOP-IMRHIPC with PID 9436 (C:\work1\IMUTest\springboot\imu-test\target\classes started by gavin in C:\work1\IMUTest\springboot\imu-test)
+2022-09-14 23:38:03.500 INFO  9436 --- [main] org.gavincui.imutest.ImuTestApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-14 23:38:03.924 INFO  9436 --- [main] o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-14 23:38:03.934 INFO  9436 --- [main] o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2022-09-14 23:38:04.331 INFO  9436 --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-09-14 23:38:04.340 INFO  9436 --- [main] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-09-14 23:38:04.340 INFO  9436 --- [main] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-09-14 23:38:04.341 INFO  9436 --- [main] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-14 23:38:04.418 INFO  9436 --- [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-09-14 23:38:04.419 INFO  9436 --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 880 ms
+2022-09-14 23:38:04.533 INFO  9436 --- [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-09-14 23:38:04.695 INFO  9436 --- [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-09-14 23:38:04.737 INFO  9436 --- [main] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-14 23:38:04.776 INFO  9436 --- [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-14 23:38:04.895 INFO  9436 --- [main] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-14 23:38:04.999 INFO  9436 --- [main] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-14 23:38:05.141 INFO  9436 --- [main] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-14 23:38:05.148 INFO  9436 --- [main] o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-14 23:38:05.177 WARN  9436 --- [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-14 23:38:05.378 INFO  9436 --- [main] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-09-14 23:38:05.396 INFO  9436 --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-14 23:38:05.405 INFO  9436 --- [main] org.gavincui.imutest.ImuTestApplication - Started ImuTestApplication in 2.257 seconds (JVM running for 2.515)
+2022-09-14 23:38:10.818 INFO  9436 --- [http-nio-8080-exec-1] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-09-14 23:38:10.818 INFO  9436 --- [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-09-14 23:38:10.820 INFO  9436 --- [http-nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-09-14 23:46:18.873 INFO  9436 --- [SpringApplicationShutdownHook] o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-09-14 23:46:18.873 INFO  9436 --- [SpringApplicationShutdownHook] o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-09-14 23:46:18.876 INFO  9436 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-09-14 23:46:18.878 INFO  9436 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-09-14 23:46:35.854 INFO  13708 --- [main] org.gavincui.imutest.ImuTestApplication - Starting ImuTestApplication using Java 17.0.4.1 on DESKTOP-IMRHIPC with PID 13708 (C:\work1\IMUTest\springboot\imu-test\target\classes started by gavin in C:\work1\IMUTest\springboot\imu-test)
+2022-09-14 23:46:35.857 INFO  13708 --- [main] org.gavincui.imutest.ImuTestApplication - No active profile set, falling back to 1 default profile: "default"
+2022-09-14 23:46:36.259 INFO  13708 --- [main] o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-09-14 23:46:36.272 INFO  13708 --- [main] o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2022-09-14 23:46:36.686 INFO  13708 --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-09-14 23:46:36.696 INFO  13708 --- [main] org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-09-14 23:46:36.696 INFO  13708 --- [main] org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-09-14 23:46:36.697 INFO  13708 --- [main] org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-09-14 23:46:36.776 INFO  13708 --- [main] o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-09-14 23:46:36.777 INFO  13708 --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 883 ms
+2022-09-14 23:46:36.886 INFO  13708 --- [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-09-14 23:46:37.060 INFO  13708 --- [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-09-14 23:46:37.095 INFO  13708 --- [main] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-09-14 23:46:37.133 INFO  13708 --- [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-09-14 23:46:37.262 INFO  13708 --- [main] org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-09-14 23:46:37.359 INFO  13708 --- [main] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-09-14 23:46:37.544 INFO  13708 --- [main] o.h.e.t.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-09-14 23:46:37.552 INFO  13708 --- [main] o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-09-14 23:46:37.587 WARN  13708 --- [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-09-14 23:46:37.842 INFO  13708 --- [main] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-09-14 23:46:37.862 INFO  13708 --- [main] o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2022-09-14 23:46:37.871 INFO  13708 --- [main] org.gavincui.imutest.ImuTestApplication - Started ImuTestApplication in 2.345 seconds (JVM running for 2.62)
