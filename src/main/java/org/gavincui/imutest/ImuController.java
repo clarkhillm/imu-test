@@ -1,6 +1,7 @@
 package org.gavincui.imutest;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -36,17 +37,26 @@ public class ImuController {
     @GetMapping(value = "/imu/hello")
     public String hello() {
         log.debug("hello ...");
-        for (Session session : DeviceWebSocket.socketList) {
+        for (Session session : WSController.socketList) {
             session.getAsyncRemote().sendText("hello ...");
         }
         return "imu display system  v1.0, zero.thresholdX = " + thresholdX;
     }
 
-    @PutMapping(value = "/imu/param")
+    @GetMapping(value = "/imu/params")
+    public String getParam() {
+        HashMap<String, Number> params = new HashMap<>();
+        params.put("thresholdX", thresholdX);
+        params.put("zeroAccount", zeroAccount);
+
+        return JSON.toJSONString(params);
+    }
+
+    @PutMapping(value = "/imu/params")
     public ResponseEntity<HttpStatus> putParam(@RequestBody String body) {
         JSONObject data = JSON.parseObject(body);
 
-        thresholdX = data.getDoubleValue("zeroThreshold");
+        thresholdX = data.getDoubleValue("thresholdX");
         zeroAccount = data.getIntValue("zeroAccount");
 
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
@@ -60,6 +70,14 @@ public class ImuController {
         JSONArray datas = data.getJSONArray("value");
 
         double newData = datas.getDoubleValue(0);
+
+        HashMap<String, Number> v = new HashMap<>();
+        v.put("value", newData);
+        for (Session session : WSControllerOrigin.socketList) {
+            if (session != null && session.isOpen()) {
+                session.getAsyncRemote().sendText(JSON.toJSONString(v));
+            }
+        }
         if (Math.abs(newData) - thresholdX < 0) {
             newData = 0;
         }
@@ -120,9 +138,9 @@ public class ImuController {
         JSONObject rs = new JSONObject();
         rs.put("value", new double[] { pt, nt, st });
 
-        log.debug(JSON.toJSONString(rs));
+        log.debug(JSON.toJSONString(rs) + ",thresholdX:" + thresholdX + ",zeroAccount:" + zeroAccount);
 
-        for (Session session : DeviceWebSocket.socketList) {
+        for (Session session : WSController.socketList) {
             if (session != null && session.isOpen()) {
                 session.getAsyncRemote().sendText(JSON.toJSONString(rs));
             }
