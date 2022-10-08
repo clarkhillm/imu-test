@@ -62,6 +62,8 @@ public class ImuController {
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
+    private int zAccount = 0;
+
     @PutMapping(value = "/imu/update")
     public ResponseEntity<HttpStatus> putValue(@RequestBody String body) {
         // log.debug(body);
@@ -78,6 +80,7 @@ public class ImuController {
                 session.getAsyncRemote().sendText(JSON.toJSONString(v));
             }
         }
+
         if (Math.abs(newData) - thresholdX < 0) {
             newData = 0;
         }
@@ -96,38 +99,37 @@ public class ImuController {
         }
 
         if (zeroList.size() > 0 && zeroList.size() >= zeroAccount) {
-            if (xData2.size() > 10) {
+            if (xData2.size() > 10 && xData2.stream().mapToDouble(vv -> vv).sum() != 0) {
                 log.debug("xData2:" + xData2);
-                calculateCycle(xData2, zeroList.size());
+                calculateCycle(xData2, zeroList.size() + zAccount);
+                zAccount = 0;
+            } else {
+                zAccount += 1;
             }
         } else {
             xData2.add(newData);
         }
+
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
-    private void calculateCycle(List<Double> xdata22, int zeroAccount) {
+    private void calculateCycle(List<Double> xdata22, int z) {
 
-        if (xdata22.stream().mapToDouble(v -> v).sum() == 0) {
-            return;
-        }
+        // if (xdata22.stream().mapToDouble(v -> v).sum() == 0) {
+        // return;
+        // }
 
         int pt = 0;
         int nt = 0;
-        int st = zeroAccount;
+        int st = z;
 
         for (Double value : xdata22) {
             if (value > 0) {
                 pt += 1;
             }
-        }
-
-        for (Double value : xdata22) {
             if (value < 0) {
                 nt += 1;
             }
-        }
-        for (Double value : xdata22) {
             if (value == 0) {
                 st += 1;
             }
