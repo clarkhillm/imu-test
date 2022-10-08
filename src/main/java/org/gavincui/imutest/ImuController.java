@@ -98,7 +98,7 @@ public class ImuController {
         if (zeroList.size() > 0 && zeroList.size() >= zeroAccount) {
             if (xData2.size() > 10) {
                 log.debug("xData2:" + xData2);
-                calculateCycle(xData2);
+                calculateCycle(xData2, zeroList.size());
             }
         } else {
             xData2.add(newData);
@@ -106,7 +106,7 @@ public class ImuController {
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
-    private void calculateCycle(List<Double> xdata22) {
+    private void calculateCycle(List<Double> xdata22, int zeroAccount) {
 
         if (xdata22.stream().mapToDouble(v -> v).sum() == 0) {
             return;
@@ -114,7 +114,7 @@ public class ImuController {
 
         int pt = 0;
         int nt = 0;
-        int st = 0;
+        int st = zeroAccount;
 
         for (Double value : xdata22) {
             if (value > 0) {
