@@ -1,4 +1,4 @@
-package org.gavincui.imutest;
+package org.gavincui.imutest.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
