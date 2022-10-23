@@ -9,9 +9,9 @@ CREATE TABLE `dev_setting` (
 
 CREATE TABLE `dev_pair` (
     `id` CHAR(36) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
-    `name` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_0900_ai_ci',
+    `pair_name` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8mb4_0900_ai_ci',
     `dev_left` CHAR(36) NULL DEFAULT NULL COLLATE 'utf8mb4_0900_ai_ci',
     `dev_right` CHAR(36) NULL DEFAULT NULL COLLATE 'utf8mb4_0900_ai_ci',
-    `desc` VARCHAR(200) NULL DEFAULT NULL COLLATE 'utf8mb4_0900_ai_ci',
+    `description` VARCHAR(200) NULL DEFAULT NULL COLLATE 'utf8mb4_0900_ai_ci',
     PRIMARY KEY (`id`) USING BTREE
 ) COLLATE = 'utf8mb4_0900_ai_ci' ENGINE = InnoDB;
