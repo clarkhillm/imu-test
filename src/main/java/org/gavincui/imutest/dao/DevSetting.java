@@ -19,6 +19,9 @@ public class DevSetting implements IDaoInit {
     private String devId;
 
     @Column
+    private String measurement;
+
+    @Column
     private String position;
     @Column
     private String wrist;
@@ -83,6 +86,14 @@ public class DevSetting implements IDaoInit {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getMeasurement() {
+        return measurement;
+    }
+
+    public void setMeasurement(String measurement) {
+        this.measurement = measurement;
     }
 
 }
