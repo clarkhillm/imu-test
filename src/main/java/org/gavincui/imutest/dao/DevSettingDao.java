@@ -1,4 +1,4 @@
-package org.gavincui.imutest.dao.dev.setting;
+package org.gavincui.imutest.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
