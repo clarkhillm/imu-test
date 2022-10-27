@@ -11,14 +11,18 @@ CREATE TABLE `dev_setting` (
 ) COLLATE = 'utf8mb4_0900_ai_ci' ENGINE = InnoDB;
 
 CREATE TABLE `position` (
-	`id` CHAR(36) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
-	`name` VARCHAR(10) NOT NULL DEFAULT '' COLLATE 'utf8mb4_0900_ai_ci',
-	`code` VARCHAR(50) NULL DEFAULT '' COLLATE 'utf8mb4_0900_ai_ci',
-	`dt_created` DATETIME NULL DEFAULT NULL,
-	`dt_updated` DATETIME NULL DEFAULT NULL,
-	`comment` VARCHAR(200) NOT NULL DEFAULT '' COLLATE 'utf8mb4_0900_ai_ci',
-	PRIMARY KEY (`id`) USING BTREE
-)
-COLLATE='utf8mb4_0900_ai_ci'
-ENGINE=InnoDB
-;
+    `id` CHAR(36) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
+    `name` VARCHAR(10) NOT NULL DEFAULT '' COLLATE 'utf8mb4_0900_ai_ci',
+    `code` VARCHAR(50) NULL DEFAULT '' COLLATE 'utf8mb4_0900_ai_ci',
+    `dt_created` DATETIME NULL DEFAULT NULL,
+    `dt_updated` DATETIME NULL DEFAULT NULL,
+    `comment` VARCHAR(200) NOT NULL DEFAULT '' COLLATE 'utf8mb4_0900_ai_ci',
+    PRIMARY KEY (`id`) USING BTREE
+) COLLATE = 'utf8mb4_0900_ai_ci' ENGINE = InnoDB;
+
+CREATE TABLE `position_setting` (
+    `id` CHAR(36) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
+    `position_id` CHAR(36) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
+    `settings` VARCHAR(100) NOT NULL DEFAULT '' COLLATE 'utf8mb4_0900_ai_ci',
+    PRIMARY KEY (`id`) USING BTREE
+) COLLATE = 'utf8mb4_0900_ai_ci' ENGINE = InnoDB;

@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.Api;
@@ -21,8 +22,8 @@ public class AnalysesController {
     private AnalysesService service;
 
     @GetMapping(value = "/query/{position}")
-    HashMap<String, List<DataItem>> query(@PathVariable String position) {
-        HashMap<String, List<DataItem>> rs = service.query(position);
+    HashMap<String, List<DataItem>> query(@PathVariable String position, @RequestParam String timeDesc) {
+        HashMap<String, List<DataItem>> rs = service.query(position, timeDesc);
         return rs;
     }
 

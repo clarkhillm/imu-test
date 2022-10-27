@@ -41,7 +41,7 @@ public class AnalysesService {
     @Resource
     private DevSettingDao devSettingDao;
 
-    public HashMap<String, List<DataItem>> query(String positionId) {
+    public HashMap<String, List<DataItem>> query(String positionId, String timeDesc) {
         HashMap<String, List<DataItem>> rs = new HashMap<>();
         Position position = positionDao.findById(positionId).orElse(null);
 
@@ -50,7 +50,7 @@ public class AnalysesService {
             List<DevSetting> devList = devSettingDao.queryByPositionId(positionId);
             for (DevSetting devSetting : devList) {
                 String flux = "from(bucket: \"" + bucket + "\")"
-                        + "|> range(start: -10d)"
+                        + "|> range(start: " + timeDesc + ")"
                         + "|> filter(fn: (r) => r[\"_measurement\"] == \"" + devSetting.getMeasurement() + "\")"
                         + "|> filter(fn: (r) => r[\"_field\"] == \"value\")"
                         + "|> filter(fn: (r) => r[\"sensor_id\"] == \"" + devSetting.getDevId() + "\")"
