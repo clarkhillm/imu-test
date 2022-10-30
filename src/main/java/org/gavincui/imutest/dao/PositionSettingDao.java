@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PositionSettingDao extends JpaRepository<PositionSetting, String> {
 
-    @Query(value = "select o.settings from PositionSetting o where o.positionId = ?1")
-    String getSettings(String positionId);
+    @Query(value = "select o from PositionSetting o where o.positionId = ?1")
+    PositionSetting getSettings(String positionId);
 
 }
