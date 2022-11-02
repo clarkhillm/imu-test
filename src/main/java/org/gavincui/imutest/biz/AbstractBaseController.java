@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public abstract class AbstractBaseController<D extends JpaRepository<M, String>, M extends IDaoInit> {
     @Autowired
-    private D dao;
+    protected D dao;
 
     @GetMapping(value = "/list")
     List<M> list() {

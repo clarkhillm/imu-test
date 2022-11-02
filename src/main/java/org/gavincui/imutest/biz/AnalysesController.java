@@ -22,8 +22,8 @@ public class AnalysesController {
     private AnalysesService service;
 
     @GetMapping(value = "/query/{position}")
-    HashMap<String, List<DataItem>> query(@PathVariable String position, @RequestParam String timeDesc) {
-        HashMap<String, List<DataItem>> rs = service.query(position, timeDesc);
+    HashMap<String, List<DataItem>> query(@PathVariable String position, @RequestParam String timeRange) {
+        HashMap<String, List<DataItem>> rs = service.query(position, timeRange);
         return rs;
     }
 

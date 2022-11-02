@@ -11,5 +11,4 @@ import io.swagger.annotations.Api;
 @RestController
 @RequestMapping(value = "/imu/position")
 public class PositionController extends AbstractBaseController<PositionDao, Position> {
-
 }

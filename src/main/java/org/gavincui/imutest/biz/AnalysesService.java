@@ -1,5 +1,6 @@
 package org.gavincui.imutest.biz;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -11,6 +12,8 @@ import org.gavincui.imutest.dao.DevSetting;
 import org.gavincui.imutest.dao.DevSettingDao;
 import org.gavincui.imutest.dao.Position;
 import org.gavincui.imutest.dao.PositionDao;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +26,8 @@ import com.influxdb.query.FluxTable;
 @Service
 public class AnalysesService {
 
+    Logger log = LoggerFactory.getLogger(AnalysesService.class);
+
     @Value("${influx.url}")
     private String url;
 
@@ -32,29 +37,30 @@ public class AnalysesService {
     @Value("${influx.org}")
     private String org;
 
-    @Value("${influx.bucket}")
-    private String bucket;
-
     @Resource
     private PositionDao positionDao;
 
     @Resource
     private DevSettingDao devSettingDao;
 
-    public HashMap<String, List<DataItem>> query(String positionId, String timeDesc) {
+    public HashMap<String, List<DataItem>> query(String positionId, String dateRange) {
         HashMap<String, List<DataItem>> rs = new HashMap<>();
         Position position = positionDao.findById(positionId).orElse(null);
 
         InfluxDBClient client = InfluxDBClientFactory.create(url, token.toCharArray(), org);
+
         if (position != null) {
             List<DevSetting> devList = devSettingDao.queryByPositionId(positionId);
             for (DevSetting devSetting : devList) {
-                String flux = "from(bucket: \"" + bucket + "\")"
-                        + "|> range(start: " + timeDesc + ")"
+
+                String flux = "from(bucket: \"" + position.getCode() + "\")"
+                        + "|> range(" + dateRange + ")"
                         + "|> filter(fn: (r) => r[\"_measurement\"] == \"" + devSetting.getMeasurement() + "\")"
                         + "|> filter(fn: (r) => r[\"_field\"] == \"value\")"
                         + "|> filter(fn: (r) => r[\"sensor_id\"] == \"" + devSetting.getDevId() + "\")"
                         + "|> yield()";
+
+                log.debug("flux:" + flux);
 
                 List<DataItem> dataItems = new ArrayList<>();
                 rs.put(devSetting.getWrist(), dataItems);
