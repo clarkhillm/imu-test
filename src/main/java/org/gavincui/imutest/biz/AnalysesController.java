@@ -27,4 +27,9 @@ public class AnalysesController {
         return rs;
     }
 
+    @GetMapping(value = "/query/cycle/{position}")
+    List<DataItem> queryCycle(@PathVariable String position, @RequestParam String timeRange) {
+        return service.queryCycle(position, timeRange);
+    }
+
 }

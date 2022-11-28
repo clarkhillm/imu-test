@@ -1,6 +1,5 @@
 package org.gavincui.imutest.biz;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -52,7 +51,6 @@ public class AnalysesService {
         if (position != null) {
             List<DevSetting> devList = devSettingDao.queryByPositionId(positionId);
             for (DevSetting devSetting : devList) {
-
                 String flux = "from(bucket: \"" + position.getCode() + "\")"
                         + "|> range(" + dateRange + ")"
                         + "|> filter(fn: (r) => r[\"_measurement\"] == \"" + devSetting.getMeasurement() + "\")"
@@ -79,6 +77,34 @@ public class AnalysesService {
             }
         }
         client.close();
+
+        return rs;
+    }
+
+    public List<DataItem> queryCycle(String positionId, String dateRange) {
+        List<DataItem> rs = new ArrayList<>();
+        Position position = positionDao.findById(positionId).orElse(null);
+        InfluxDBClient client = InfluxDBClientFactory.create(url, token.toCharArray(), org);
+        if (position != null) {
+            String flux = "from(bucket: \"" + position.getCode() + "\")"
+                    + "|> range(" + dateRange + ")"
+                    + "|> filter(fn: (r) => r[\"_measurement\"] == \"cycle\")"
+                    + "|> filter(fn: (r) => r[\"_field\"] == \"value\")"
+                    + "|> yield()";
+
+            QueryApi queryApi = client.getQueryApi();
+            List<FluxTable> tables = queryApi.query(flux);
+            for (FluxTable fluxTable : tables) {
+                List<FluxRecord> records = fluxTable.getRecords();
+                for (FluxRecord fluxRecord : records) {
+                    DataItem item = new DataItem();
+                    item.setDatetime(new Date(fluxRecord.getTime().toEpochMilli()));
+                    item.setDevId("cycle-sensor");
+                    item.setValue(Double.parseDouble(fluxRecord.getValueByKey("_value").toString()));
+                    rs.add(item);
+                }
+            }
+        }
 
         return rs;
     }
