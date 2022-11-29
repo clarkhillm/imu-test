@@ -49,6 +49,7 @@ public class AnalysesService {
         InfluxDBClient client = InfluxDBClientFactory.create(url, token.toCharArray(), org);
 
         if (position != null) {
+            rs.put("cycle", queryCycle(positionId, dateRange));
             List<DevSetting> devList = devSettingDao.queryByPositionId(positionId);
             for (DevSetting devSetting : devList) {
                 String flux = "from(bucket: \"" + position.getCode() + "\")"
