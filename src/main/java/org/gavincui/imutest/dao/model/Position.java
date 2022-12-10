@@ -1,4 +1,4 @@
-package org.gavincui.imutest.dao;
+package org.gavincui.imutest.dao.model;
 
 import java.util.Date;
 

@@ -4,8 +4,8 @@ import java.util.UUID;
 
 import javax.annotation.Resource;
 
-import org.gavincui.imutest.dao.PositionSetting;
 import org.gavincui.imutest.dao.PositionSettingDao;
+import org.gavincui.imutest.dao.model.PositionSetting;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;

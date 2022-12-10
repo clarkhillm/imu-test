@@ -7,10 +7,10 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.gavincui.imutest.dao.DevSetting;
 import org.gavincui.imutest.dao.DevSettingDao;
-import org.gavincui.imutest.dao.Position;
 import org.gavincui.imutest.dao.PositionDao;
+import org.gavincui.imutest.dao.model.DevSetting;
+import org.gavincui.imutest.dao.model.Position;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

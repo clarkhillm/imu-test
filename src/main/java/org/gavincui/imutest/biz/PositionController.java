@@ -1,7 +1,7 @@
 package org.gavincui.imutest.biz;
 
-import org.gavincui.imutest.dao.Position;
 import org.gavincui.imutest.dao.PositionDao;
+import org.gavincui.imutest.dao.model.Position;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

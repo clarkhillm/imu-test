@@ -12,6 +12,7 @@ CREATE TABLE `dev_setting` (
 
 CREATE TABLE `position` (
     `id` CHAR(36) NOT NULL  ,
+    `line_id` CHAR(36) NOT NULL  ,
     `name` VARCHAR(10) NOT NULL DEFAULT ''  ,
     `code` VARCHAR(50) NULL DEFAULT ''  ,
     `dt_created` DATETIME NULL DEFAULT NULL,
@@ -26,3 +27,11 @@ CREATE TABLE `position_setting` (
     `settings` VARCHAR(100) NOT NULL DEFAULT ''  ,
     PRIMARY KEY (`id`) USING BTREE
 )   ENGINE = InnoDB;
+
+CREATE TABLE `line` (
+	`id` CHAR(36) NOT NULL COLLATE ,
+	`name` VARCHAR(50) NOT NULL COLLATE ,
+	PRIMARY KEY (`id`) USING BTREE
+)
+ENGINE=InnoDB
+;
