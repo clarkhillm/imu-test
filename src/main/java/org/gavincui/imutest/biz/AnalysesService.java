@@ -56,10 +56,9 @@ public class AnalysesService {
                         + "|> range(" + dateRange + ")"
                         + "|> filter(fn: (r) => r[\"_measurement\"] == \"" + devSetting.getMeasurement() + "\")"
                         + "|> filter(fn: (r) => r[\"_field\"] == \"value\")"
-                        + "|> filter(fn: (r) => r[\"sensor_id\"] == \"" + devSetting.getDevId() + "\")"
                         + "|> yield()";
 
-                log.debug("flux:" + flux);
+                // log.debug("flux:" + flux);
 
                 List<DataItem> dataItems = new ArrayList<>();
                 rs.put(devSetting.getWrist(), dataItems);
@@ -106,8 +105,8 @@ public class AnalysesService {
                 }
             }
         }
+        client.close();
 
         return rs;
     }
-
 }

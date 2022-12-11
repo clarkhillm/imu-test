@@ -32,4 +32,6 @@ public class AnalysesController {
         return service.queryCycle(position, timeRange);
     }
 
+    
+
 }

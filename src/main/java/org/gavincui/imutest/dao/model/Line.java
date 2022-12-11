@@ -1,7 +1,5 @@
 package org.gavincui.imutest.dao.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,16 +7,15 @@ import javax.persistence.Table;
 
 import org.gavincui.imutest.biz.IDaoInit;
 
+import java.util.Date;
+
 @Entity
 @Table
-public class Position implements IDaoInit {
-
+public class Line implements IDaoInit {
     @Id
     @Column
     private String id;
 
-    @Column
-    private String lineId;
     @Column
     private String name;
     @Column
@@ -27,8 +24,6 @@ public class Position implements IDaoInit {
     private Date dtCreated;
     @Column
     private Date dtUpdated;
-    @Column
-    private String comment;
 
     public String getId() {
         return id;
@@ -54,14 +49,6 @@ public class Position implements IDaoInit {
         this.code = code;
     }
 
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
     public Date getDtCreated() {
         return dtCreated;
     }
@@ -76,14 +63,6 @@ public class Position implements IDaoInit {
 
     public void setDtUpdated(Date dtUpdated) {
         this.dtUpdated = dtUpdated;
-    }
-
-    public String getLineId() {
-        return lineId;
-    }
-
-    public void setLineId(String lineId) {
-        this.lineId = lineId;
     }
 
 }
